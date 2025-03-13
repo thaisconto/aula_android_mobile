@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editIdade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Idade"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editUF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="UF"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editCidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cidade"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefone"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <!-- Seção para selecionar tamanho de roupa -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tamanho de roupa:"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTamanho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P" />
+
+            <RadioButton
+                android:id="@+id/radioM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M" />
+
+            <RadioButton
+                android:id="@+id/radioG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="G" />
+
+            <RadioButton
+                android:id="@+id/radioGG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GG" />
+        </RadioGroup>
+
+        <!-- Seção para selecionar cores preferidas -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cores de preferência:"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+
+        <CheckBox
+            android:id="@+id/checkAzul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Azul" />
+
+        <CheckBox
+            android:id="@+id/checkVermelho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vermelho" />
+
+        <CheckBox
+            android:id="@+id/checkPreto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preto" />
+
+        <CheckBox
+            android:id="@+id/checkBranco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Branco" />
+
+        <CheckBox
+            android:id="@+id/checkVerde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verde" />
+
+        <!-- Botão de Cadastro -->
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:onClick="carregarMenuInicial"
+            android:text="Voltar menu" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Cadastrar" />
+
+        <TextView
+            android:id="@+id/textResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado: "
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:background="#E0E0E0" />
+
+    </LinearLayout>
+</ScrollView>

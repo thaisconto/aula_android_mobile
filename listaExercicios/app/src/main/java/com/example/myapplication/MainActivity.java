@@ -22,13 +22,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
 
-
+    public void carregarExercicio1(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent); //esse metodo abre uma nova activity
     }
 
     public void carregarExercicio2(View view)
     {
-        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+        startActivity(intent); //esse metodo abre uma nova activity
+    }
+
+    public void carregarExercicio3(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, MainActivity4.class);
         startActivity(intent); //esse metodo abre uma nova activity
     }
 }
