@@ -41,4 +41,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MainActivity4.class);
         startActivity(intent); //esse metodo abre uma nova activity
     }
+
+    public void carregarExercicio4(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, MainActivity5.class);
+        startActivity(intent); //esse metodo abre uma nova activity
+    }
+
+    public void carregarExercicio5(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, MainActivity6.class);
+        startActivity(intent); //esse metodo abre uma nova activity
+    }
+
+    public void carregarExercicio6(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, MainActivity7.class);
+        startActivity(intent); //esse metodo abre uma nova activity
+    }
 }

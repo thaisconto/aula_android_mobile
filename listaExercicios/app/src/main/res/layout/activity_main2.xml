@@ -11,6 +11,7 @@
         android:id="@+id/editNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:hint="Digite seu nome"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="500dp"
+        android:minHeight="48dp"
         android:hint="Digite sua idade"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/btnVerificar"
@@ -63,7 +65,8 @@
         android:onClick="carregarMenuInicial"
         android:text="Voltar Menu"
         tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="630dp" />
+        tools:layout_editor_absoluteY="630dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

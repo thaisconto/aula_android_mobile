@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/main"
     android:layout_height="match_parent"
     android:padding="16dp">
 
@@ -13,6 +14,7 @@
             android:id="@+id/editNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Nome"
             android:inputType="textPersonName" />
 
@@ -20,6 +22,7 @@
             android:id="@+id/editIdade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Idade"
             android:inputType="number" />
 
@@ -27,6 +30,7 @@
             android:id="@+id/editUF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="UF"
             android:inputType="text" />
 
@@ -34,6 +38,7 @@
             android:id="@+id/editCidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Cidade"
             android:inputType="text" />
 
@@ -41,6 +46,7 @@
             android:id="@+id/editTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Telefone"
             android:inputType="phone" />
 
@@ -48,6 +54,7 @@
             android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Email"
             android:inputType="textEmailAddress" />
 
