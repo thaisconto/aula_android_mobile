@@ -26,8 +26,8 @@ public class MainActivity5 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main5);
 
-        // Ajuste para recortes de tela e gestos do Android
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        // Ajustes
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
