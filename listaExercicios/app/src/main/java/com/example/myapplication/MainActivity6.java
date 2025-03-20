@@ -46,7 +46,7 @@ public class MainActivity6 extends AppCompatActivity {
         });
     }
 
-    // Metodo separado corretamente
+    // Metodo salvar as preferencias
     private void salvarPreferencias() {
         StringBuilder preferencias = new StringBuilder();
 
