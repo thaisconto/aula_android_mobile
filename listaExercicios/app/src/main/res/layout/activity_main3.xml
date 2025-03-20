@@ -63,12 +63,13 @@
         android:id="@+id/btnSomar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="84dp"
         android:layout_weight="1"
         android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/editValor2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="70dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnMultiplicar"
@@ -78,6 +79,7 @@
         android:layout_weight="1"
         android:text="×"
         app:layout_constraintBottom_toTopOf="@+id/btnSomar"
+        app:layout_constraintTop_toBottomOf="@+id/editValor1"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="70dp" />
 
@@ -89,21 +91,22 @@
         android:text="÷"
         app:layout_constraintBottom_toTopOf="@+id/btnSubtrair"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toEndOf="@+id/btnMultiplicar"
         app:layout_constraintTop_toBottomOf="@+id/editValor1"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <Button
         android:id="@+id/btnSubtrair"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="84dp"
         android:layout_weight="1"
         android:text="-"
+        app:layout_constraintBottom_toTopOf="@+id/editValor2"
         app:layout_constraintStart_toEndOf="@+id/btnSomar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="258dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button4"
