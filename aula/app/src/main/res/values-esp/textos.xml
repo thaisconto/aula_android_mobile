@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto_nome">Nombre</string>
+    <string name="texto_endereco">Dirección</string>
+    <string name="texto_enviar">Enviar</string>
+</resources>

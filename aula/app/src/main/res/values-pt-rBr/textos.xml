@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">aula</string>
     <string name="texto_nome">Nome</string>
-    <string name="texto_endereco">Endereco</string>
+    <string name="texto_endereco">Endereço</string>
     <string name="texto_enviar">Enviar</string>
 </resources>
