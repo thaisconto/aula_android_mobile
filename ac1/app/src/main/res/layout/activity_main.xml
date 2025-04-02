@@ -34,7 +34,6 @@
             android:hint="@string/titulo_digitar"
             android:inputType="textCapWords"
             android:textColor="#FF000000"
-            android:background="@drawable/edit_text_background"
             android:autofillHints="title"
             android:importantForAutofill="yes"
             android:paddingStart="12dp"
@@ -55,7 +54,6 @@
             android:hint="@string/autor_digitar"
             android:inputType="textCapWords"
             android:textColor="#FF000000"
-            android:background="@drawable/edit_text_background"
             android:autofillHints="name"
             android:importantForAutofill="yes"
             android:paddingStart="12dp"
@@ -74,7 +72,6 @@
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
             android:entries="@array/livro_categorias"
-            android:background="@drawable/spinner_background"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"/>
 
