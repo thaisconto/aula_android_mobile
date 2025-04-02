@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="livro_categorias">
+        <item>Ficção</item>
+        <item>Técnico</item>
+        <item>Auto-ajuda</item>
+        <item>Biografia</item>
+        <item>Outro</item>
+    </string-array>
+</resources>

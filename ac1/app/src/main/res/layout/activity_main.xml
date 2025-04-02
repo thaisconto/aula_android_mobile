@@ -1,82 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:fillViewport="true"
     tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_app"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/livro_titulo"/>
+            android:text="@string/titulo_app"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/livro_titulo"
+            android:textColor="#FF000000"/>
 
         <EditText
             android:id="@+id/titleEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
             android:hint="@string/titulo_digitar"
-            android:inputType="textCapWords"/>
+            android:inputType="textCapWords"
+            android:textColor="#FF000000"
+            android:background="@drawable/edit_text_background"
+            android:autofillHints="title"
+            android:importantForAutofill="yes"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/livro_autor"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="16dp"
+            android:textColor="#FF000000"/>
 
         <EditText
             android:id="@+id/authorEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
             android:hint="@string/autor_digitar"
-            android:inputType="textCapWords"/>
+            android:inputType="textCapWords"
+            android:textColor="#FF000000"
+            android:background="@drawable/edit_text_background"
+            android:autofillHints="name"
+            android:importantForAutofill="yes"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/livro_categoria"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="16dp"
+            android:textColor="#FF000000"/>
 
         <Spinner
             android:id="@+id/categorySpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/livro_categorias"/>
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:entries="@array/livro_categorias"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
 
         <CheckBox
             android:id="@+id/readCheckBox"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/livro_check_lido"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="16dp"
+            android:textColor="#FF000000"
+            android:buttonTint="#FF6200EE"/>
 
         <Button
             android:id="@+id/saveButton"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:text="@string/botao_salvar"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#FF6200EE"
+            android:textColor="#FFFFFFFF"/>
+
+        <ListView
+            android:id="@+id/booksListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/botao_salvar"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="24dp"
+            android:divider="#EEEEEE"
+            android:dividerHeight="1dp"/>
 
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/booksListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp"/>
-
-</LinearLayout>
+</ScrollView>

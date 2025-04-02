@@ -10,11 +10,5 @@
     <string name="autor_digitar">Digite nombree del autor</string>
     <string name="titulo_digitar">Digite titulo del libro</string>
 
-    <string-array name="livro_categorias">
-        <item>Ficción</item>
-        <item>Tecnico</item>
-        <item>Auto ayuda</item>
-        <item>Biografia</item>
-        <item>Otro</item>
-    </string-array>
+
 </resources>

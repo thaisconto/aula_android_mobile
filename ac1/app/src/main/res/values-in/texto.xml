@@ -9,11 +9,5 @@
     <string name="autor_digitar">Enter author name</string>
     <string name="titulo_digitar">Enter book title</string>
 
-    <string-array name="livro_categorias">
-        <item>Fiction</item>
-        <item>Technical</item>
-        <item>Self-help</item>
-        <item>Biography</item>
-        <item>Other</item>
-    </string-array>
+
 </resources>
