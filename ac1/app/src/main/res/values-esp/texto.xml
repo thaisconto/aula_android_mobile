@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="titulo_app">APP - Biblioteca</string>
     <string name="livro_titulo">Título Livro</string>
@@ -5,15 +7,14 @@
     <string name="livro_categoria">Categoria</string>
     <string name="botao_salvar">Salvar</string>
     <string name="livro_check_lido">Já li</string>
-    <string name="autor_digitar">Digite nome do autor</string>
-    <string name="titulo_digitar">Digite o título do livro</string>
+    <string name="autor_digitar">Digite nombree del autor</string>
+    <string name="titulo_digitar">Digite titulo del libro</string>
 
     <string-array name="livro_categorias">
-        <item>Ficção</item>
+        <item>Ficción</item>
         <item>Tecnico</item>
-        <item>Auto-ajuda</item>
+        <item>Auto ayuda</item>
         <item>Biografia</item>
-        <item>Outro</item>
+        <item>Otro</item>
     </string-array>
-
 </resources>

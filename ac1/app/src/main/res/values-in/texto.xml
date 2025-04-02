@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_app">APP - Library</string>
+    <string name="livro_titulo">Title</string>
+    <string name="livro_autor">Author</string>
+    <string name="livro_categoria">Category</string>
+    <string name="botao_salvar">Save</string>
+    <string name="livro_check_lido">Already read</string>
+    <string name="autor_digitar">Enter author name</string>
+    <string name="titulo_digitar">Enter book title</string>
+
+    <string-array name="livro_categorias">
+        <item>Fiction</item>
+        <item>Technical</item>
+        <item>Self-help</item>
+        <item>Biography</item>
+        <item>Other</item>
+    </string-array>
+</resources>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="titulo_app">APP - Biblioteca</string>
     <string name="livro_titulo">Título Livro</string>
@@ -10,10 +11,9 @@
 
     <string-array name="livro_categorias">
         <item>Ficção</item>
-        <item>Tecnico</item>
+        <item>Técnico</item>
         <item>Auto-ajuda</item>
         <item>Biografia</item>
         <item>Outro</item>
     </string-array>
-
 </resources>
