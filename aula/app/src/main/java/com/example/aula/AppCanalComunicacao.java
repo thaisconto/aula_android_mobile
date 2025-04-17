@@ -1,0 +1,23 @@
+package com.example.aula;
+
+import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
+
+public class AppCanalComunicacao extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            //default's: id, nome
+            NotificationChannel channel = new NotificationChannel("default", "default", importance);
+            channel.setDescription("Canal de Notificação");
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+}
