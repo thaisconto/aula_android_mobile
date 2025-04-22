@@ -9,72 +9,83 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
 public class BackgroundService extends Service {
-    private static final int NOTIFICATION_ID_IMMEDIATE = 1;
-    private static final int NOTIFICATION_ID_DELAYED = 2;
+    private static final int NOTIFICATION_ID_DELAYED = 1;
+    private static final int NOTIFICATION_ID_PARABENS = 2; // ID específico para a notificação de parabéns
 
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
 
-    // Notificação original (com delay de 5s) na activity 8
+    // Notificação original (com delay de 5s)
     private void showDelayedNotification() {
-        Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_MUTABLE);
+        try {
+            Intent intent = new Intent(this, MainActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_MUTABLE);
 
-        Notification notification = new NotificationCompat.Builder(this, "default")
-                .setContentTitle("Notificação de Evento")
-                .setContentText("Algo aconteceu!")
-                .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentIntent(pendingIntent)
-                .build();
+            Notification notification = new NotificationCompat.Builder(this, "default")
+                    .setContentTitle("Notificação de Evento")
+                    .setContentText("Algo aconteceu!")
+                    .setSmallIcon(R.drawable.ic_launcher_background)
+                    .setContentIntent(pendingIntent)
+                    .build();
 
-        NotificationManager notificationManager = (NotificationManager)
-                getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(NOTIFICATION_ID_DELAYED, notification);
+            NotificationManager notificationManager = (NotificationManager)
+                    getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(NOTIFICATION_ID_DELAYED, notification);
+        } catch (Exception e) {
+            Log.e("Notificacao", "Erro na notificação delay", e);
+        }
     }
 
-    // Notificação de parabéns (imediata) com 5 cliques na activity 9
-    private void showCongratulationsNotification() {
-        Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
-                FLAG_MUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+    // Notificação de parabéns ao chegar no contador 5
+    private void showParabensNotification() {
+        try {
+            Intent intent = new Intent(this, MainActivity9.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-        Notification notification = new NotificationCompat.Builder(this, "default")
-                .setContentTitle("Parabéns!")
-                .setContentText("Você clicou 5 vezes!")
-                .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentIntent(pendingIntent)
-                .setAutoCancel(true)
-                .build();
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
+                    FLAG_MUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationManager notificationManager = (NotificationManager)
-                getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(NOTIFICATION_ID_IMMEDIATE, notification);
+            Notification notification = new NotificationCompat.Builder(this, "default")
+                    .setContentTitle("Parabéns!")
+                    .setContentText("Você clicou 5 vezes!")
+                    .setSmallIcon(R.drawable.ic_launcher_background)
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .build();
+
+            NotificationManager manager = (NotificationManager)
+                    getSystemService(Context.NOTIFICATION_SERVICE);
+
+            manager.notify(NOTIFICATION_ID_PARABENS, notification);
+            Log.d("Notificacao", "Notificação de parabéns disparada");
+        } catch (Exception e) {
+            Log.e("Notificacao", "Erro na notificação de parabéns", e);
+        }
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // Verifica se é para mostrar a notificação imediata (contador)
-        boolean showCongratulations = intent.getBooleanExtra("show_congrats", false);
-
-        if (showCongratulations) {
-            showCongratulationsNotification();
-            stopSelf(); // Encerra após mostrar a notificação
+        if (intent != null && intent.getBooleanExtra("is_contador", false)) {
+            showParabensNotification();
+            stopSelf();
             return START_NOT_STICKY;
-        }
-        else {
-            // Mantém o comportamento original com delay de 5s
+        } else {
             new Thread(() -> {
                 try {
                     Thread.sleep(5000);
                     showDelayedNotification();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Log.e("Notificacao", "Thread interrompida", e);
+                    Thread.currentThread().interrupt();
                 }
             }).start();
             return START_STICKY;

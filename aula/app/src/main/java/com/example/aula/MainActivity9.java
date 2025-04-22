@@ -5,12 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity9 extends AppCompatActivity {
     private int contador = 0;
@@ -20,20 +15,11 @@ public class MainActivity9 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main9);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        // pegando o texto e botão do xml
         textoContador = findViewById(R.id.textoContador);
         botaoContador = findViewById(R.id.botaoContador);
 
-        //acao de somar no contador ao clicar no botao
         botaoContador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,9 +27,13 @@ public class MainActivity9 extends AppCompatActivity {
                 textoContador.setText("Contador: " + contador);
 
                 if (contador == 5) {
-                    // Dispara a notificação quando chegar a 5 cliques
+                    // Configuração para disparar a notificação
                     Intent serviceIntent = new Intent(MainActivity9.this, BackgroundService.class);
+                    serviceIntent.putExtra("is_contador", true); // ESSE PARÂMETRO É ESSENCIAL
                     startService(serviceIntent);
+
+                    contador = 0; // Reinicia o contador após 5 cliques
+                    textoContador.setText("Contador: " + contador);
                 }
             }
         });
