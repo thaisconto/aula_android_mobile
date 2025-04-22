@@ -3,4 +3,6 @@
     <string name="texto_nome">Nome</string>
     <string name="texto_endereco">Endereco</string>
     <string name="texto_enviar">Enviar</string>
+    <string name="enter_file_size">Digite o tamanho do arquivo (MB)</string>
+    <string name="download">Baixar</string>
 </resources>

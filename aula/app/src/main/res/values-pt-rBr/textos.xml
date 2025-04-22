@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">aula</string>
     <string name="texto_nome">Nome</string>
     <string name="texto_endereco">Endereço</string>
     <string name="texto_enviar">Enviar</string>
+    <string name="enter_file_size">Digite o tamanho do arquivo (MB)</string>
+    <string name="download">Baixar</string>
 </resources>
