@@ -1,0 +1,33 @@
+<resources>
+    <!-- Strings Gerais -->
+    <string name="app_name">Medication Tracker</string>
+
+    <!-- MainActivity -->
+    <string name="main_title">Medication Tracker</string>
+    <string name="btn_adicionar_remedio">Add Medication</string>
+
+    <!-- EditActivity -->
+    <string name="titulo_nome_remedio">Medication Name</string>
+    <string name="hint_nome_remedio">e.g. Paracetamol</string>
+    <string name="titulo_horario">Time</string>
+    <string name="hint_horario">e.g. 08:00</string>
+    <string name="titulo_descricao">Instructions</string>
+    <string name="hint_descricao">e.g. Take 1 tablet after meals</string>
+    <string name="check_tomado">Taken</string>
+    <string name="btn_salvar">Save</string>
+
+    <!-- ListaRemedios (item da lista) -->
+    <string name="status_descricao">Status</string>
+    <string name="editar_descricao">Edit</string>
+    <string name="excluir_descricao">Delete</string>
+
+    <!-- Diálogos e Mensagens -->
+    <string name="confirmar_exclusao">Confirm Delete</string>
+    <string name="msg_confirmar_exclusao">Delete this medication?</string>
+    <string name="btn_excluir">Delete</string>
+    <string name="btn_cancelar">Cancel</string>
+
+    <!-- Validações -->
+    <string name="erro_nome_vazio">Enter medication name</string>
+    <string name="erro_horario_vazio">Enter time</string>
+</resources>

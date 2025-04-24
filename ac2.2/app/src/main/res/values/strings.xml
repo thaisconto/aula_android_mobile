@@ -1,0 +1,33 @@
+<resources>
+    <!-- Strings Gerais -->
+    <string name="app_name">Controle de Remédios</string>
+
+    <!-- MainActivity -->
+    <string name="main_title">Controle de Remédios</string>
+    <string name="btn_adicionar_remedio">Adicionar Remédio</string>
+
+    <!-- EditActivity -->
+    <string name="titulo_nome_remedio">Nome do Remédio</string>
+    <string name="hint_nome_remedio">Ex: Paracetamol</string>
+    <string name="titulo_horario">Horário</string>
+    <string name="hint_horario">Ex: 08:00</string>
+    <string name="titulo_descricao">Descrição</string>
+    <string name="hint_descricao">Ex: Tomar 1 comprimido após o almoço</string>
+    <string name="check_tomado">Marcar como tomado</string>
+    <string name="btn_salvar">Salvar</string>
+
+    <!-- ListaRemedios (item da lista) -->
+    <string name="status_descricao">Status do remédio</string>
+    <string name="editar_descricao">Editar remédio</string>
+    <string name="excluir_descricao">Excluir remédio</string>
+
+    <!-- Diálogos e Mensagens -->
+    <string name="confirmar_exclusao">Confirmar exclusão</string>
+    <string name="msg_confirmar_exclusao">Deseja realmente excluir este remédio?</string>
+    <string name="btn_excluir">Excluir</string>
+    <string name="btn_cancelar">Cancelar</string>
+
+    <!-- Validações -->
+    <string name="erro_nome_vazio">Informe o nome do remédio</string>
+    <string name="erro_horario_vazio">Informe o horário</string>
+</resources>

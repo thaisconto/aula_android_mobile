@@ -1,6 +1,4 @@
-package com.example.myapplication;
-
-import static androidx.core.app.ActivityCompat.startActivityForResult;
+package com.example.ac2;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +17,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.myapplication.BancoHelper;
-import com.example.myapplication.EditActivity;
-import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
+
     private ListView listViewRemedios;
     private BancoHelper bancoHelper;
     private RemedioAdapter adapter;
@@ -33,10 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Iniciar serviço de notificação
+        Intent intentServico = new Intent(this, BackgroundService.class);
+        startService(intentServico);
+
         bancoHelper = new BancoHelper(this);
         listViewRemedios = findViewById(R.id.listViewRemedios);
 
-        // Botão para adicionar novo remédio
+        // Botao para adicionar novo remédio
         findViewById(R.id.btnAdicionar).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, EditActivity.class);
             startActivityForResult(intent, 1);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
-            return LayoutInflater.from(context).inflate(R.layout.lista_remedios, parent, false);
+            return LayoutInflater.from(context).inflate(R.layout.activity_lista_remedios, parent, false);
         }
 
         @Override
@@ -92,11 +92,10 @@ public class MainActivity extends AppCompatActivity {
             txtDescricao.setText(descricao);
 
             // Status (tomado/não tomado)
+            imgStatus.setImageResource(R.drawable.check);
             if (tomado == 1) {
-                imgStatus.setImageResource(R.drawable.check);
                 imgStatus.setColorFilter(ContextCompat.getColor(context, android.R.color.holo_green_dark));
             } else {
-                imgStatus.setImageResource(R.drawable.alert);
                 imgStatus.setColorFilter(ContextCompat.getColor(context, android.R.color.holo_red_dark));
             }
 
@@ -108,17 +107,15 @@ public class MainActivity extends AppCompatActivity {
             });
 
             // Botao excluir
-            btnExcluir.setOnClickListener(v -> {
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Confirmar exclusão")
-                        .setMessage("Deseja realmente excluir este remédio?")
-                        .setPositiveButton("Excluir", (dialog, which) -> {
-                            bancoHelper.excluirRemedio(id);
-                            carregarRemedios();
-                        })
-                        .setNegativeButton("Cancelar", null)
-                        .show();
-            });
+            btnExcluir.setOnClickListener(v -> new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Confirmar exclusão")
+                    .setMessage("Deseja realmente excluir este remédio?")
+                    .setPositiveButton("Excluir", (dialog, which) -> {
+                        bancoHelper.excluirRemedio(id);
+                        carregarRemedios();
+                    })
+                    .setNegativeButton("Cancelar", null)
+                    .show());
 
             // Clique no item marca como tomado/não tomado
             view.setOnClickListener(v -> {

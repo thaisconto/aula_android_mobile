@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Controle de Remédios</string>
+    <string name="title_activity_edit">Editar Remédio</string>
+    <string name="app_name_edit">Controle de Remédios</string>
+    <string name="status_descricao">Status do remédio</string>
+    <string name="editar_descricao">Editar remédio</string>
+    <string name="excluir_descricao">Excluir remédio</string>
 </resources>

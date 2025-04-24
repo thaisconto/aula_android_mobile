@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:minHeight="56dp">
+
+    <ImageView
+        android:id="@+id/imgStatus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/alert"
+        android:contentDescription="@string/status_descricao" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtHorario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#616161"/>
+
+        <TextView
+            android:id="@+id/txtDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#9E9E9E"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnEditar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:src="@drawable/edit"
+        android:contentDescription="@string/editar_descricao"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    <ImageButton
+        android:id="@+id/btnExcluir"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:src="@drawable/delete"
+        android:contentDescription="@string/excluir_descricao"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+</LinearLayout>

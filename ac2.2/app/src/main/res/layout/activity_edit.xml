@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".EditActivity">
+
+    <!-- Nome do Remédio -->
+    <TextView
+        android:id="@+id/txtTituloNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_nome_remedio"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        android:hint="@string/hint_nome_remedio"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Horário -->
+    <TextView
+        android:id="@+id/txtTituloHorario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_horario"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/editNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editHorario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        android:hint="@string/hint_horario"
+        android:inputType="time"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloHorario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Descrição -->
+    <TextView
+        android:id="@+id/txtTituloDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_descricao"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/editHorario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_descricao"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloDescricao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Checkbox -->
+    <CheckBox
+        android:id="@+id/checkTomado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_tomado"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/editDescricao"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Botão Salvar -->
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/btn_salvar"
+        android:backgroundTint="#FF6200EE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/checkTomado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
